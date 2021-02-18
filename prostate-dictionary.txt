@@ -1,0 +1,46 @@
+
+D.P. Byar and S.B. Green, "The choice of treatment for cancer
+patients based on covariate information: Application to
+prostate cancer", Bulletin Cancer, Paris, 67:477-488, 1980.
+
+These data were from a randomized trial comparing four treatments
+for state 3 and 4 prostate cancer, with almost equal numbers of
+patients on placebo and each of three doses of estrogen.
+
+Four patients had missing values on all of the following
+variables: wt, pf, hx, sbp, dpb, ekg, hg, bm; two of these
+patients were also missing sz.  These patients are excluded
+from consideration.
+
+The ultimate goal of an analysis of the dataset might be to
+discover patterns in survival or to do an analysis of
+covariance to assess the effect of treatment while adjusting
+for patient heterogeneity.
+
+
+ 1 patno    Patient number
+ 2 stage    Stage
+ 3 rx       Treatment
+ 4 dtime    Months of follow-up
+ 5 status   Follow-up status
+ 6 age      Age in years
+ 7 wt       Weight index = wt(kg) - ht(cm) + 200
+ 8 pf       Performance rating
+ 9 hx       History of cardiovascular disease
+10 sbp      Systolic blood pressure /10
+11 dbp      Diastolic blood pressure /10
+12 ekg      Electrocardiogram code
+13 hg       Serum Hemoglobin (gr / 100 ml)
+14 sz       Size of primary tumor (cm squared)
+15 sg       Combined index of stage and hist. grade
+16 ap       Serum prostatic acid phosphatase
+17 bm       Bone metastases
+18 sdate    Date on study (as days since January 1, 1960)
+
+
+FINAL VARIABLES USED:
+
+RX + pspline(AGE) + pspline(WT) + BM + SZ + HX + SG-categorical
+
+
+
